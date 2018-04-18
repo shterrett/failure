@@ -1,15 +1,6 @@
+require_relative "./shared"
+
 module Either
-  module Shared
-    def ==(other)
-      self.class == other.class &&
-        other.val_eq?(val)
-    end
-
-    def val_eq?(other_val)
-      other_val == val
-    end
-  end
-
   def self.new(&block)
     val = begin
             block.call()
