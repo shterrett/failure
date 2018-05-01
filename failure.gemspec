@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'failure'
-  s.version     = '0.1.1'
+  s.version     = '0.1.0'
   s.date        = '2018-04-18'
   s.summary     = "Either and Option functor/applicative/monad"
   s.description = "Implements Either and Option a la Haskell"
