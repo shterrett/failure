@@ -7,7 +7,7 @@ describe Either::ActiveModelHelpers do
     end
 
     def present?
-      to_h.empty? ? false : true
+      !to_h.empty?
     end
   end
 
