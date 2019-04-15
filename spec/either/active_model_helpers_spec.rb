@@ -32,7 +32,7 @@ describe Either::ActiveModelHelpers do
       expect(either.send(:val)).to eq(object)
     end
 
-    it "converts an object with errors into an errors hash wrapped in Either::Left" do
+    it "converts an object with errors into an errors object wrapped in Either::Left" do
       object = MockActiveModelObject.create(c: :chrysanthemum, d: :dolomite_lime)
 
       mock_errors = MockActiveModelErrors.new
@@ -42,6 +42,7 @@ describe Either::ActiveModelHelpers do
       either = object.to_either
 
       expect(either).to be_left
+      expect(either.send(:val)).to eq mock_errors
       expect(either.send(:val).to_h).to eq(
         { base: ["only accepts dinosaurs"] }
       )
